@@ -19,17 +19,7 @@ galleryListEl.style.flexWrap = "wrap"
 
 
 const galleryPics = images.map(image => {
-	const galleryItemEl = document.createElement("li")
-	const galleryPicEl = document.createElement("img")
-	galleryItemEl.appendChild(galleryPicEl)
-	galleryPicEl.src = image.url
-	galleryPicEl.alt = image.alt
-	galleryPicEl.style.width = "360px"
-	galleryPicEl.style.margin = "15px"
+	const tampleString = `<li><img src="${image.url}" alt="${image.alt}" width="360px"></li>`
 
-
-	return galleryItemEl;
+	galleryListEl.insertAdjacentHTML("beforeend", tampleString);
 })
-
-galleryListEl.append(...galleryPics)
-
